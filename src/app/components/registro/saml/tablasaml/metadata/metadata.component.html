@@ -1,0 +1,76 @@
+<button class="btn-ver" (click)="modal.open(tabla2)">Ver Metadata</button>
+<ng-template #tabla2 let-modal class="popup">
+  <div class="modal-header modal-lg">
+    <h4 class="modal-titulo" style="
+        justify-content: center;
+        margin: auto -50px auto auto;
+        font-weight: 900;
+        font-size: 1.15em;
+      ">
+      Metadatos
+
+    </h4>
+    <button class="close" style="justify-content: right" aria-label="close" type="button" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row" style="margin:auto; justify-content: center; text-align: center;">
+      <div class="col-md-5" style="margin:auto auto 10px auto">
+        <button class="btn-soyyo" (click)="mostrarMetadataIdp()">
+          Ver Metadata IDP
+        </button>
+
+
+      </div>
+      <div class="col-md-5" style="margin:auto auto 10px auto">
+        <button class="btn-soyyo" (click)="mostrarMetadataSp()">
+          Ver Metadata SP
+        </button>
+
+      </div>
+    </div>
+    <div class="contenedorMetadata" *ngIf="MensajeIdp">
+      <div class="blog-card scroll">
+        <pre class="lenguage-markup">
+          <code class="lenguage-markup">
+            <mat-progress-spinner [mode]="'indeterminate'" *ngIf="Loading" ></mat-progress-spinner>
+            {{metadataIdp}}
+          </code>
+        </pre>
+
+      </div>
+      <div class="close-button">
+
+
+
+        <button class="btn-soyyo" (click)="descargarXMLIdp()" style="justify-content: center">Descargar XML</button>
+
+
+      </div>
+    </div>
+    <div class="contenedorMetadata" *ngIf="MensajeSp">
+      <div class="blog-card scroll">
+        <pre class="lenguage-markup">
+          <code class="lenguage-markup">
+            <mat-progress-spinner [mode]="'indeterminate'" *ngIf="Loading" ></mat-progress-spinner>
+
+            {{metadataSp}}
+          </code>
+        </pre>
+
+      </div>
+
+      <div class="close-button">
+
+
+        <button class="btn-soyyo" (click)="descargarXMLSp()">Descargar XML</button>
+
+
+
+      </div>
+    </div>
+
+
+
+  </div>

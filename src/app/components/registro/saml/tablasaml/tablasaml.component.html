@@ -1,0 +1,54 @@
+<div *ngIf='tabla'>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Entity ID</th>
+        <th scope="col">Nombre de la organización</th>
+        <th scope="col">Dominio de la organización</th>
+        <th scope="col">ACSURL</th>
+        <th scope="col">Metadata</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let regi of this.entity | paginate:page" class="dataRow">
+        <td>{{ regi.SamlSpId }}</td>
+        <td>{{ regi.EntityId }}</td>
+        <td>{{ regi.EntityName }}</td>
+        <td>{{ regi.Domain }}</td>
+        <td>{{ regi.AcsUrl }}</td>
+        <td>
+          <app-metadata [Id]='regi.SamlSpId' [Nombre]='regi.EntityName'></app-metadata>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation example" style="padding: 10px;">
+    <ul class="pagination justify-content-end" style="color: 5a33ff;">
+      <li class="page-item">
+        <a class="page-link" href="#" (click)='prevPage()'>&#5176;</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">{{page/10 + 1}}</a></li>
+
+      <li class="page-item">
+        <a class="page-link" href="#" (click)='nextPage()'>&#5171;</a>
+      </li>
+    </ul>
+  </nav>
+
+</div>
+<div *ngIf="spinner" class="mat-progress-spinner">
+  <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
+  <!-- <mat-progress-spinner [mode]="'indeterminate'"></mat-progress-spinner> -->
+</div>
+
+<div *ngIf="lambdaDisabled" class="containerError">
+  <!-- <div class="row" class="container404">
+    404
+  </div> -->
+  <div class="row" class="containerText">
+    No se encontraron datos, revisar conexión a base de datos
+  </div>
+</div>
+
+

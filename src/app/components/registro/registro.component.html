@@ -1,0 +1,18 @@
+<mat-drawer-container >
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <!-- Aqui el sidebar -->
+    <app-sidebar></app-sidebar>
+
+  </mat-drawer>
+  <mat-drawer-content>
+    <!-- Aquí va el header -->
+    <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+
+    <!-- Aquí el outlet -->
+    <router-outlet></router-outlet>
+    <!-- <button (click)="logout()" type="button">Cerrar sesión</button> -->
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
+

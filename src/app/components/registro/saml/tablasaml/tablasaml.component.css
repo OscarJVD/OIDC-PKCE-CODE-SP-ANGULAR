@@ -1,0 +1,117 @@
+thead {
+  background-color: #5a33ff;
+  color: white;
+}
+
+.dataRow {
+  text-align: center;
+
+}
+
+.btn-ver {
+  border-radius: 5px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #5a33ff;
+  font-weight: bold;
+  color: white;
+
+}
+
+.salir {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #5a33ff;
+  font-weight: bold;
+  color: white;
+
+}
+
+.modal-titulo {
+  font-family: "Helvetica", Montserrat;
+  font-weight: 900;
+  font-size: 1em;
+  text-align: center;
+  justify-content: center;
+  color: #5a33ff;
+}
+
+thead {
+  background-color: #5a33ff;
+  color: white;
+  text-align: center;
+
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+}
+
+.cuerpo {
+
+  margin: -20px 0px -50px 0px;
+}
+
+.dataRow1 {
+  padding: 10px;
+  font-size: 15px;
+
+  font-family: "Helvetica", Montserrat;
+  border-radius: 10px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+  overflow-y: auto;
+  overflow-x: auto;
+
+}
+
+.popup {
+  width: auto;
+
+  height: auto;
+  position: relative;
+
+
+  border-radius: 10px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+}
+
+.btn-soyyo {
+  padding: 10px;
+  position: relative;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #5a33ff;
+  font-weight: bold;
+  color: white;
+}
+
+.mat-progress-spinner{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+mat-progress-spinner {
+  margin: auto;
+  color: #5a33ff;
+}
+.containerError {
+  font-family: "Helvetica", Montserrat;
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+.container404{
+  text-align: center;
+  font-size: 80px;
+  color: #5a33ff;
+  font-weight: bold;
+  padding-bottom: 10px;
+  padding-top:10px;
+}
+.containerText{
+  text-align: center;
+  padding-top: 10px;
+}

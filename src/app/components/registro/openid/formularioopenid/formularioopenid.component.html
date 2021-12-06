@@ -1,0 +1,100 @@
+<section class="blog-card m-4">
+  <div class="container-form">
+    <form class="formulario" style="padding-left: 20px; padding-right: 20px" [formGroup]="form"
+      (ngSubmit)="registrarDatos()" autocomplete="off">
+      <div class="row">
+        <div class="row">
+          <h4 class="tituloColumna">Registro OpenId</h4>
+        </div>
+        <div class="col-md-4">
+          <div class="row etiquetasCampos">
+            <mat-form-field appearance="legacy">
+              <mat-label class="etiqueta1">Nombre de Organización</mat-label>
+              <input matInput type="text" placeholder="Nombre de Organización" formControlName="orgName">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row etiquetasCampos">
+            <mat-form-field appearance="legacy">
+              <mat-label class="etiqueta1">Dominio de la organización</mat-label>
+              <input matInput type="text" placeholder="Nombre de la organización" formControlName="orgUrl">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row etiquetasCampos">
+            <mat-form-field appearance="legacy">
+              <mat-label class="etiqueta1">ACSURL</mat-label>
+              <input matInput type="text" placeholder="ACSURL" formControlName="acsUrl">
+            </mat-form-field>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="row" style="justify-content:center; margin:auto; text-align: center">
+          <div class="etiquetas">
+            <label for="principal" class="etiquetaCorreo" style="text-align:center;">
+              ¿La entidad cuenta con una imagen asociada?
+            </label>
+          </div>
+        </div>
+        <div class="row" style="justify-content:center; margin:auto; text-align:center">
+          <div class="col-md-1">
+            <button type="button" class="btn-soyyo" (click)="positive()">
+              Si
+            </button>
+          </div>
+          <div class="col-md-1">
+            <button type="button" class="btn-soyyo" (click)="negative()">
+              No
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row campoImagen" *ngIf="campoImagen">
+        <div class="row">
+          <div class="etiquetas">
+            <label for="principal" class="etiquetaCorreo">
+              Selección de imagen:
+            </label>
+            <input type="file" (change)="onFileSelected($event)" accept="image/*" id=”upload_image”>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="test">
+        <div class="row">
+          <div class="etiquetas">
+            <label for="principal" class="" style="padding: 0.5rem;">
+              Se asigno nombre de la entidad a la imagen
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <button type="button" class="btn-soyyo" name="limpiarCampos" (click)="form.reset()">
+            Limpiar Campos
+          </button>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group text-center">
+            <button type="submit" class="btn-soyyo" [disabled]="form.invalid || imagenCargada==''">Registrar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row" id="footer">
+
+      <div class="col-md-4 pie">
+        Response Type (Tipo de respuesta): <strong>id_token</strong>
+      </div>
+      <div class="col-md-4 pie">
+        Scope (Ámbito): <strong>openid</strong>
+      </div>
+      <div class="col-md-4 pie">Grant Type (Tipo de autorización): <strong>implicit</strong>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+
+  .popup{
+      width: auto;
+
+      height: auto;
+      position: relative;
+
+
+      border-radius: 10px;
+      box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+    }
+    .close-button {
+        margin: auto;
+        padding: 10px;
+        justify-content: center;
+        align-items:center;
+    text-align: center;
+  }
+  .modal-titulo {
+    font-family: "Helvetica", Montserrat;
+    margin: 24px 24px 0px 24px;
+    text-align: center;
+    justify-content: center;
+    color: black;
+  }
+  .btn-ver {
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #5a33ff;
+    font-weight: bold;
+    color: white;
+
+  }
+    .btn-soyyo {
+        margin:auto;
+        font-size: 16px;
+        border-radius: 5px;
+        text-align: center;
+        width: 60%;
+        box-sizing: border-box;
+        background-color: #5a33ff;
+        font-weight: 700;
+        color:white;
+        /* box-shadow: 3px 3px 20px rgba(0, 0, 0, .5); */
+      }

@@ -1,0 +1,38 @@
+<button type="button" class="btn-ver" (click)="modal.open(logout)">
+    Cerrar sesión
+</button>
+<ng-template #logout let-modal class="popup">
+  <div class="modal-header modal-lg">
+    <h4 class="modal-titulo" style="
+        justify-content: center;
+        margin: auto -50px auto auto;
+        font-weight: 900;
+        font-size: 1.15em;
+      ">
+      ¿Está seguro de cerrar sesión?
+
+    </h4>
+    <button class="close" style="justify-content: right" aria-label="close" type="button" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row" style="margin:auto; justify-content: center; text-align: center;">
+      <div class="col-md-5" style="margin:auto auto 10px auto">
+        <button class="btn-soyyo" (click)="logoutSesion()">
+          Si
+        </button>
+
+
+      </div>
+      <div class="col-md-5" style="margin:auto auto 10px auto">
+        <button class="btn-soyyo" (click)="modal.dismiss()">
+          No
+        </button>
+
+      </div>
+    </div>
+
+
+
+  </div>
