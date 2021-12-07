@@ -2,33 +2,46 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const idpURL = `https://my.local.host:50000/oidc`;
+const spURL = `https://my.local.host:4200`;
+
+const clientID = `foo`;
+const secretID = `foo`;
+
+const redirectURI = `${spURL}/registro`;
+const respType = `code`;
+const grantType = `authorization_code`;
+const respScope = `openid`;
+
+// CODE AUTHORIZATION
+const codeChallenge = `j8DXrXnbQyVQQUEISsv4jgSjtfSQynIPNKYYlO6ALTA`;
+const codeChallenge_method = `S256`;
+const codeVerifier = `FhlaErgZAfmSEcCwpxU6taC8-EJ7pBGxy3b7dPakQfWISXsrPKzW-eiZ1JTeOnlosAR~rp4I5oOU3-MAeF-rL-8aGlLCJNTjQNb_YJPMn9ungPlg4EWNATO-o~JuQcxq`;
+
+// ENDPOINTS
+const authURI = `${idpURL}/auth`;
+const idpTokenURI = `${idpURL}/token`;
+const logoutURL = `${idpURL}/session/end`;
+// END ENDPOINTS
+
 export const environment = {
   production: false,
 
-  client_id: 'foo',
-  secret_id: 'foo',
+  client_id: clientID,
+  secret_id: secretID,
 
   // OBTENER CODE CON EXITO
-  loginURL:
-    'https://my.local.host:50000/auth?' +
-    // 'https://oidc.soyyoadmin.com/oidc/auth?' +
-    'client_id=foo&response_type=code&scope=openid&redirect_uri=https://my.local.host:4200/registro&code_challenge=l49rA_UT4xYzyPvdDuqpAjBTNHMGm4nxoBJAbsC8mNs&code_challenge_method=S256&code_verifier=eALiy65ijy9CGohwJ8AOjk34H_OE0OYYzeo8~-M5936nTDi1QzA5SPKSZ.ADzYnHCbq9XuB.FNL7gJJUPc.1TMNvONQRla.gcc8uWqYa-lKIMNoqhlhnlI.Gx-XYr.SG',
-    // &code_challenge_method=S256
-    // &code_challenge_method=ñRS256
-    // &state=1234zyx
-  // state=xtF9L05xb8EgI9V3i1ih5qDh4PW7RaMNdwTnoBDD&nonce=xtF9L05xb8EgI9V3i1ih5qDh4PW7RaMNdwTnoBDD&
-  // loginURL: 'https://my.local.host:50000/login?' +
-  // 'client_id=foo&response_type=code&scope=openid&issuer:https://cognito-idp.us-east-2.amazonaws.com/us-east-2_xh6BdcnD3&redirect_uri=https://my.local.host:4200/registro',
+  loginURL: `${authURI}?client_id=${clientID}&response_type=${respType}&scope=${respScope}&redirect_uri=${redirectURI}&code_challenge=${codeChallenge}&code_challenge_method=${codeChallenge_method}&code_verifier=${codeVerifier}`,
 
-  redirectURL: 'https://my.local.host:4200/registro',
+  redirectURL: redirectURI,
+  grantType,
+  respType,
+  respScope,
+  codeVerifier,
+  idpTokenURL: idpTokenURI,
 
-  idpTokenURL: 'https://my.local.host:50000/token',
-  // idpTokenURL: 'https://my.local.host:50000/auth',
-
-  logout_uri: 'https://my.local.host:4200/registro',
-  logout:
-    'https://my.local.host:50000/session/end?' +
-    'client_id=foo&response_type=code&scope=openid&redirect_uri=https://my.local.host:4200/registro&code_challenge=l49rA_UT4xYzyPvdDuqpAjBTNHMGm4nxoBJAbsC8mNs&code_challenge_method=S256&code_verifier=eALiy65ijy9CGohwJ8AOjk34H_OE0OYYzeo8~-M5936nTDi1QzA5SPKSZ.ADzYnHCbq9XuB.FNL7gJJUPc.1TMNvONQRla.gcc8uWqYa-lKIMNoqhlhnlI.Gx-XYr.SG?post_logout_redirect_uri=https://my.local.host:4200',
+  logout: `${logoutURL}?client_id=${clientID}&response_type=${respType}&scope=${respScope}&redirect_uri=${redirectURI}&code_challenge=${codeChallenge}&code_challenge_method=${codeChallenge_method}&code_verifier=${codeVerifier}`,
+  // &post_logout_redirect_uri=${spURL}
 };
 /*
 client_id: '3chjqdttb8pfum7pchbfue9gop',

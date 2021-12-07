@@ -12,20 +12,14 @@ export class AwsCognitoService {
 
   getTokenDetailsFromIdp(callbackCode: string): Observable<any> {
     try {
-      const details: any = { // bad request 400
-        grant_type: 'authorization_code',
+      // bad request 400
+      const details: any = {
+        grant_type: environment.grantType,
         code: callbackCode,
-        response_type: 'code',
-        code_verifier: 'eALiy65ijy9CGohwJ8AOjk34H_OE0OYYzeo8~-M5936nTDi1QzA5SPKSZ.ADzYnHCbq9XuB.FNL7gJJUPc.1TMNvONQRla.gcc8uWqYa-lKIMNoqhlhnlI.Gx-XYr.SG',
-        // scope: 'openid+email', // openid+profile - openid+email
-        scope: 'openid', // openid+profile - openid+email
-        // scope: 'openid', // openid+profile - openid+email
-        // redirect_uri: environment.redirectURL,
-        redirect_uri: 'https://my.local.host:4200/registro',
-        // client_id:  environment.client_id,
-        // secret_id:  environment.secret_id,
-        // client_id: 'foo',
-        // secret_id: 'foo',
+        response_type: environment.respType,
+        code_verifier: environment.codeVerifier,
+        scope: environment.respScope,
+        redirect_uri: environment.redirectURL,
       };
 
       const formBody = Object.keys(details)
