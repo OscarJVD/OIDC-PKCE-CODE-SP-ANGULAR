@@ -5,12 +5,12 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-logout',
   templateUrl: './logout.component.html',
-  styleUrls: ['./logout.component.css']
+  styleUrls: ['./logout.component.css'],
 })
 export class LogoutComponent implements OnInit {
   tokenDetails: any;
   token: any;
-  constructor(public modal: NgbModal) { }
+  constructor(public modal: NgbModal) {}
 
   ngOnInit(): void {
     this.token = localStorage.getItem('token');
@@ -23,10 +23,9 @@ export class LogoutComponent implements OnInit {
       console.log(this.tokenDetails);
     }
   }
-  logoutSesion():void {
+  logoutSesion(): void {
     window.location.assign(environment.logout);
-    // localStorage.removeItem('Token');
-    // localStorage.removeItem('code');
-
+    localStorage.removeItem('Token');
+    localStorage.removeItem('code');
   }
 }

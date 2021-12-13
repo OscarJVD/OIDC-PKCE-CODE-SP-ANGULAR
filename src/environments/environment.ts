@@ -3,10 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 const idpURL = `https://my.local.host:50000/oidc`;
+// const idpURL = `https://oidc.soyyoadmin.com/oidc`;
 const spURL = `https://my.local.host:4200`;
 
 const clientID = `foo`;
 const secretID = `foo`;
+// const clientID = `s6U1ZxrkqUWI0b3AI27ep2T3xUX2iKaMKQFWutNTPB4rPbx`;
+// const secretID = `50L8evxHkUL0WDsX2L2fBWPjAxJvzmCh26FIwNVLOloN9zNfIcyUNuK4HwKLEhWHpCo3fq`;
 
 const redirectURI = `${spURL}/registro`;
 const respType = `code`;
@@ -40,8 +43,11 @@ export const environment = {
   codeVerifier,
   idpTokenURL: idpTokenURI,
 
-  logout: `${logoutURL}?client_id=${clientID}&response_type=${respType}&scope=${respScope}&redirect_uri=${redirectURI}&code_challenge=${codeChallenge}&code_challenge_method=${codeChallenge_method}&code_verifier=${codeVerifier}`,
+  logout: `${logoutURL}?client_id=${clientID}&response_type=${respType}&scope=${respScope}&redirect_uri=${redirectURI}&code_challenge=${codeChallenge}&code_challenge_method=${codeChallenge_method}&code_verifier=${codeVerifier}&post_logout_redirect_uri=${spURL}`,
+
+  // &post_logout_redirect_uri=${spURL}&id_token_hint=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiJodHRwczovL2F1dGgucGluZ29uZS5jb20vL2FzIiwic3ViIjoiIiwiaWF0IjoxNjM4OTA0NjQ0LCJleHAiOjE2Mzg5OTEzNDR9.U1XESS29Bohleeqgzeqfl4W3adJdmoz2i-UUEXlFfyw
   // &post_logout_redirect_uri=${spURL}
+  // error_description: could not decode id_token_hint
 };
 /*
 client_id: '3chjqdttb8pfum7pchbfue9gop',
