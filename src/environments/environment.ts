@@ -1,5 +1,6 @@
 // const idpURL = `https://my.local.host:50000/oidc`;
 const idpURL = `https://oidc.soyyoadmin.com/oidc`;
+// const idpURL = `https://93clxfjlqd.execute-api.us-east-2.amazonaws.com/oidc`;
 const spURL = `https://my.local.host:4200`;
 
 // const clientID = `foo`;
