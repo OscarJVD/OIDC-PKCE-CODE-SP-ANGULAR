@@ -4,17 +4,19 @@
   font-family: "Helvetica",Montserrat;
 
 }
+
 .imagenSoyYo{
   padding-bottom: 10px;
 }
+
 .blog-card {
-  width: 300px;
+  width: 600px;
   height: auto;
   text-align: center;
   margin: auto;
   padding: 4em;
   border-radius: 10px;
-  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+  box-shadow: 1px 1px 10px #5a33ff;
 
 }
 .container-form{
@@ -27,15 +29,24 @@
 }
 
 .btn-soyyo {
-  padding: 10px;
+  border: #5a33ff solid 2px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   font-size: 16px;
   border-radius: 5px;
   text-align: center;
   box-sizing: border-box;
-  background-color: #5a33ff;
+  background-color: white;
   font-weight: bold;
-  color:white;
+  color:#5a33ff;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
+.btn-soyyo:hover{
+  background-color: rgb(239, 239, 239);
+  box-shadow: 0 12px 18px 0 rgba(0,0,0,0.2), 0 8px 24px 0 rgba(0,0,0,0.19);
+}
+
 .container-buttom {
   margin:auto;
   padding-top: 10px;

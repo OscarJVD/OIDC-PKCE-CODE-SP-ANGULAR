@@ -3,12 +3,13 @@
 */
 // const idpURL = `http://localhost:3234/oidc`;
 // const idpURL = `https://my.local.host:50000/oidc`;
+// const idpURL = `http://localhost:3000`;
 const idpURL = `https://oidc.soyyoadmin.com/oidc`;
 // const idpURL = `https://93clxfjlqd.execute-api.us-east-2.amazonaws.com/oidc`;
 const spURL = `https://my.local.host:4200`;
 
 // const clientID = `foo`;
-// const secretID = `foo`;
+// const secretID = `bar`;
 const clientID = `M8T1B5r09nMvQVACBamVpAo6TA6ga6LtNpOVuRJEU5H0EJu`;
 const secretID = `Z9xEwptOVhapuhhy0ZqDaiDbMzZUxX9btXBr5E1IbcH7q1XywIJukDxMeXEwFKgQqWL7Jh`;
 
@@ -44,5 +45,5 @@ export const environment = {
   codeVerifier,
   idpTokenURL: idpTokenURI,
 
-  logout: `${logoutURL}?client_id=${clientID}&response_type=${respType}&scope=${respScope}&redirect_uri=${redirectURI}&code_challenge=${codeChallenge}&code_challenge_method=${codeChallenge_method}&code_verifier=${codeVerifier}&post_logout_redirect_uri=${spURL}`,
+  logout: `${logoutURL}?client_id=${clientID}&secret_id=${secretID}&response_type=${respType}&scope=${respScope}&redirect_uri=${redirectURI}&code_challenge=${codeChallenge}&code_challenge_method=${codeChallenge_method}&code_verifier=${codeVerifier}&post_logout_redirect_uri=${spURL}`,
 };

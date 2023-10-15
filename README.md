@@ -1,3 +1,6 @@
+# Ejecutar con 
+ng serve --ssl --ssl-cert "./localhost.crt" --ssl-key "./localhost.key" --host "my.local.host"
+
 # FrontSoyyo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
